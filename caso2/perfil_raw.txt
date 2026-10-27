@@ -1,0 +1,434 @@
+################ secuencial_O2 n=1000 workers=1 ################
+--- time -v ---
+	Command being timed: "./matmul_secuencial_O2 1000 10"
+	User time (seconds): 0.73
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13220
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3008
+	Voluntary context switches: 1
+	Involuntary context switches: 7
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+4006529433,,cycles,956208146,100.00,,
+7173045449,,instructions,956208146,100.00,,
+140035690,,cache-references,956208146,100.00,,
+13837274,,cache-misses,956208146,100.00,,
+
+################ openmp_externo n=1000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_externo 1000 10 4"
+	User time (seconds): 0.98
+	System time (seconds): 0.00
+	Percent of CPU this job got: 339%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3026
+	Voluntary context switches: 3
+	Involuntary context switches: 71
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+3709998609,,cycles,909527477,100.00,,
+7177731468,,instructions,909527477,100.00,,
+140381999,,cache-references,909527477,100.00,,
+806197,,cache-misses,909527477,100.00,,
+
+################ openmp_externo n=1000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_externo 1000 10 8"
+	User time (seconds): 5.55
+	System time (seconds): 0.01
+	Percent of CPU this job got: 724%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3032
+	Voluntary context switches: 6
+	Involuntary context switches: 477
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+16184045532,,cycles,3897451173,100.00,,
+7225043769,,instructions,3897451173,100.00,,
+158780728,,cache-references,3897451173,100.00,,
+8638760,,cache-misses,3897451173,100.00,,
+
+################ openmp_collapse n=1000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_collapse 1000 10 4"
+	User time (seconds): 0.98
+	System time (seconds): 0.00
+	Percent of CPU this job got: 350%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13228
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3026
+	Voluntary context switches: 3
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+3698998122,,cycles,919150229,100.00,,
+7189267206,,instructions,919150229,100.00,,
+168903913,,cache-references,919150229,100.00,,
+1055772,,cache-misses,919150229,100.00,,
+
+################ openmp_collapse n=1000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_collapse 1000 10 8"
+	User time (seconds): 5.23
+	System time (seconds): 0.00
+	Percent of CPU this job got: 697%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12844
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3035
+	Voluntary context switches: 8
+	Involuntary context switches: 692
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+22448554281,,cycles,5370436400,100.00,,
+7243084607,,instructions,5370436400,100.00,,
+173076316,,cache-references,5370436400,100.00,,
+923126,,cache-misses,5370436400,100.00,,
+
+################ openmp_medio n=1000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_medio 1000 10 4"
+	User time (seconds): 1.07
+	System time (seconds): 0.00
+	Percent of CPU this job got: 365%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13368
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3765
+	Voluntary context switches: 1
+	Involuntary context switches: 51
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+3893194328,,cycles,975393326,100.00,,
+7198982811,,instructions,975393326,100.00,,
+165081628,,cache-references,975393326,100.00,,
+784495,,cache-misses,975393326,100.00,,
+
+################ openmp_medio n=1000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_medio 1000 10 8"
+	User time (seconds): 7.09
+	System time (seconds): 0.00
+	Percent of CPU this job got: 766%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4500
+	Voluntary context switches: 1
+	Involuntary context switches: 1013
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+30678999094,,cycles,7327177325,100.00,,
+7534827663,,instructions,7327177325,100.00,,
+199439074,,cache-references,7327177325,100.00,,
+5520763,,cache-misses,7327177325,100.00,,
+
+################ secuencial_O2 n=2000 workers=1 ################
+--- time -v ---
+	Command being timed: "./matmul_secuencial_O2 2000 10"
+	User time (seconds): 23.66
+	System time (seconds): 0.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:23.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11798
+	Voluntary context switches: 1
+	Involuntary context switches: 368
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+105893733590,,cycles,23789217648,100.00,,
+56829121611,,instructions,23789217648,100.00,,
+7752204757,,cache-references,23789217648,100.00,,
+615150021,,cache-misses,23789217648,100.00,,
+
+################ openmp_externo n=2000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_externo 2000 10 4"
+	User time (seconds): 24.19
+	System time (seconds): 0.02
+	Percent of CPU this job got: 394%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11817
+	Voluntary context switches: 1
+	Involuntary context switches: 111
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+99816931141,,cycles,23850119581,100.00,,
+56822252580,,instructions,23850119581,100.00,,
+7772784211,,cache-references,23850119581,100.00,,
+179385669,,cache-misses,23850119581,100.00,,
+
+################ openmp_externo n=2000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_externo 2000 10 8"
+	User time (seconds): 55.56
+	System time (seconds): 0.03
+	Percent of CPU this job got: 781%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11824
+	Voluntary context switches: 7
+	Involuntary context switches: 1163
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+230029427113,,cycles,59424655495,100.00,,
+57071092582,,instructions,59424655495,100.00,,
+3996552264,,cache-references,59424655495,100.00,,
+160894357,,cache-misses,59424655495,100.00,,
+
+################ openmp_collapse n=2000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_collapse 2000 10 4"
+	User time (seconds): 27.17
+	System time (seconds): 0.02
+	Percent of CPU this job got: 394%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48164
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11814
+	Voluntary context switches: 4
+	Involuntary context switches: 120
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+130009299102,,cycles,35168477203,100.00,,
+56941541189,,instructions,35168477203,100.00,,
+6242249610,,cache-references,35168477203,100.00,,
+300664143,,cache-misses,35168477203,100.00,,
+
+################ openmp_collapse n=2000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_collapse 2000 10 8"
+	User time (seconds): 56.37
+	System time (seconds): 0.05
+	Percent of CPU this job got: 650%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11824
+	Voluntary context switches: 8
+	Involuntary context switches: 2415
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+205494584587,,cycles,56739805046,100.00,,
+57127233209,,instructions,56739805046,100.00,,
+4623778330,,cache-references,56739805046,100.00,,
+272506439,,cache-misses,56739805046,100.00,,
+
+################ openmp_medio n=2000 workers=4 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_medio 2000 10 4"
+	User time (seconds): 63.68
+	System time (seconds): 0.05
+	Percent of CPU this job got: 397%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11822
+	Voluntary context switches: 1
+	Involuntary context switches: 329
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+236998635384,,cycles,63810893466,100.00,,
+60052231846,,instructions,63810893466,100.00,,
+6955029523,,cache-references,63810893466,100.00,,
+598565939,,cache-misses,63810893466,100.00,,
+
+################ openmp_medio n=2000 workers=8 ################
+--- time -v ---
+	Command being timed: "./matmul_openmp_medio 2000 10 8"
+	User time (seconds): 125.52
+	System time (seconds): 0.04
+	Percent of CPU this job got: 694%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48180
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17069
+	Voluntary context switches: 1
+	Involuntary context switches: 8735
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- perf stat ---
+463817065901,,cycles,126493006449,100.00,,
+69077636441,,instructions,126493006449,100.00,,
+5037516540,,cache-references,126493006449,100.00,,
+524366301,,cache-misses,126493006449,100.00,,
+

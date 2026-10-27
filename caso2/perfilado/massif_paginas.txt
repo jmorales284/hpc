@@ -1,0 +1,304 @@
+--------------------------------------------------------------------------------
+Command:            perfilado/matmul_g 1000 10
+Massif arguments:   --pages-as-heap=yes --massif-out-file=perfilado/massif_paginas.out
+ms_print arguments: perfilado/massif_paginas.out
+--------------------------------------------------------------------------------
+
+
+    MB
+15.89^:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::#
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |:                                                                      #
+     |@                                                                      #
+     |@                                                                      #
+     |@                                                                      #
+     |@                                                                      #
+     |@                                                                      #
+   0 +----------------------------------------------------------------------->Gi
+     0                                                                   24.38
+
+Number of snapshots: 38
+ Detailed snapshots: [9, 13, 23, 28, 34 (peak)]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0            4,096            4,096             0            0
+  1              0            8,192            8,192             0            0
+  2              0           12,288           12,288             0            0
+  3              0           20,480           20,480             0            0
+  4              0           24,576           24,576             0            0
+  5              0          200,704          200,704             0            0
+  6              0          241,664          241,664             0            0
+  7              0          258,048          258,048             0            0
+  8              0          262,144          262,144             0            0
+  9              0          266,240          266,240             0            0
+100.00% (266,240B) (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+->100.00% (266,240B) 0x0: ???
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 10              0          278,528          278,528             0            0
+ 11              0          282,624          282,624             0            0
+ 12              0          286,720          286,720             0            0
+ 13              0          286,720          286,720             0            0
+100.00% (286,720B) (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+->98.57% (282,624B) 0x0: ???
+| 
+->01.43% (4,096B) 0x401F540: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+  ->01.43% (4,096B) 0x2: ???
+    ->01.43% (4,096B) 0x1FFEFFFFFA: ???
+      ->01.43% (4,096B) 0x1FFF00000D: ???
+        ->01.43% (4,096B) 0x1FFF000012: ???
+          
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 14              0          282,624          282,624             0            0
+ 15              0          282,624          282,624             0            0
+ 16         51,447          290,816          290,816             0            0
+ 17         52,356          311,296          311,296             0            0
+ 18         52,433          315,392          315,392             0            0
+ 19         52,481          319,488          319,488             0            0
+ 20         52,529          327,680          327,680             0            0
+ 21         54,973          421,888          421,888             0            0
+ 22         57,367        2,596,864        2,596,864             0            0
+ 23         57,427        4,206,592        4,206,592             0            0
+100.00% (4,206,592B) (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+->93.28% (3,923,968B) 0x4025D2C: __mmap64 (mmap64.c:58)
+| ->93.28% (3,923,968B) 0x4025D2C: mmap (mmap64.c:46)
+|   ->52.19% (2,195,456B) 0x4007E17: _dl_map_segment (dl-map-segments.h:29)
+|   | ->52.19% (2,195,456B) 0x4007E17: _dl_map_segments (dl-map-segments.h:101)
+|   |   ->52.19% (2,195,456B) 0x4007E17: _dl_map_object_from_fd (dl-load.c:1258)
+|   |     ->52.19% (2,195,456B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |       ->51.70% (2,174,976B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       | ->51.70% (2,174,976B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |       |   ->51.70% (2,174,976B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |       |     ->51.70% (2,174,976B) 0x402241B: dl_main (rtld.c:1965)
+|   |       |       ->51.70% (2,174,976B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |       |         ->51.70% (2,174,976B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |       |           ->51.70% (2,174,976B) 0x402075D: _dl_start (rtld.c:581)
+|   |       |             ->51.70% (2,174,976B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |       |               ->51.70% (2,174,976B) 0x2: ???
+|   |       |                 ->51.70% (2,174,976B) 0x1FFEFFFFFA: ???
+|   |       |                   ->51.70% (2,174,976B) 0x1FFF00000D: ???
+|   |       |                     ->51.70% (2,174,976B) 0x1FFF000012: ???
+|   |       |                       
+|   |       ->00.49% (20,480B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |       
+|   ->38.66% (1,626,112B) 0x4007F78: _dl_map_segments (dl-map-segments.h:139)
+|   | ->38.66% (1,626,112B) 0x4007F78: _dl_map_object_from_fd (dl-load.c:1258)
+|   |   ->38.66% (1,626,112B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |     ->38.27% (1,609,728B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |     | ->38.27% (1,609,728B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |     |   ->38.27% (1,609,728B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |     |     ->38.27% (1,609,728B) 0x402241B: dl_main (rtld.c:1965)
+|   |     |       ->38.27% (1,609,728B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |     |         ->38.27% (1,609,728B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |     |           ->38.27% (1,609,728B) 0x402075D: _dl_start (rtld.c:581)
+|   |     |             ->38.27% (1,609,728B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |     |               ->38.27% (1,609,728B) 0x2: ???
+|   |     |                 ->38.27% (1,609,728B) 0x1FFEFFFFFA: ???
+|   |     |                   ->38.27% (1,609,728B) 0x1FFF00000D: ???
+|   |     |                     ->38.27% (1,609,728B) 0x1FFF000012: ???
+|   |     |                       
+|   |     ->00.39% (16,384B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |     
+|   ->02.24% (94,208B) 0x400C36C: _dl_sysdep_read_whole_file (dl-misc.c:49)
+|   | ->02.24% (94,208B) 0x4016C27: _dl_load_cache_lookup (dl-cache.c:411)
+|   |   ->02.24% (94,208B) 0x40097CA: _dl_map_object (dl-load.c:2135)
+|   |     ->02.24% (94,208B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       ->02.24% (94,208B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |         ->02.24% (94,208B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |           ->02.24% (94,208B) 0x402241B: dl_main (rtld.c:1965)
+|   |             ->02.24% (94,208B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |               ->02.24% (94,208B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |                 ->02.24% (94,208B) 0x402075D: _dl_start (rtld.c:581)
+|   |                   ->02.24% (94,208B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |                     ->02.24% (94,208B) 0x2: ???
+|   |                       ->02.24% (94,208B) 0x1FFEFFFFFA: ???
+|   |                         ->02.24% (94,208B) 0x1FFF00000D: ???
+|   |                           ->02.24% (94,208B) 0x1FFF000012: ???
+|   |                             
+|   ->00.19% (8,192B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->06.72% (282,624B) 0x0: ???
+| 
+->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 24         57,475        4,530,176        4,530,176             0            0
+ 25         57,523        4,554,752        4,554,752             0            0
+ 26         57,857        4,608,000        4,608,000             0            0
+ 27         65,274        4,620,288        4,620,288             0            0
+ 28        154,096        4,620,288        4,620,288             0            0
+100.00% (4,620,288B) (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+->93.88% (4,337,664B) 0x4025D2C: __mmap64 (mmap64.c:58)
+| ->93.88% (4,337,664B) 0x4025D2C: mmap (mmap64.c:46)
+|   ->47.52% (2,195,456B) 0x4007E17: _dl_map_segment (dl-map-segments.h:29)
+|   | ->47.52% (2,195,456B) 0x4007E17: _dl_map_segments (dl-map-segments.h:101)
+|   |   ->47.52% (2,195,456B) 0x4007E17: _dl_map_object_from_fd (dl-load.c:1258)
+|   |     ->47.52% (2,195,456B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |       ->47.07% (2,174,976B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       | ->47.07% (2,174,976B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |       |   ->47.07% (2,174,976B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |       |     ->47.07% (2,174,976B) 0x402241B: dl_main (rtld.c:1965)
+|   |       |       ->47.07% (2,174,976B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |       |         ->47.07% (2,174,976B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |       |           ->47.07% (2,174,976B) 0x402075D: _dl_start (rtld.c:581)
+|   |       |             ->47.07% (2,174,976B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |       |               ->47.07% (2,174,976B) 0x2: ???
+|   |       |                 ->47.07% (2,174,976B) 0x1FFEFFFFFA: ???
+|   |       |                   ->47.07% (2,174,976B) 0x1FFF00000D: ???
+|   |       |                     ->47.07% (2,174,976B) 0x1FFF000012: ???
+|   |       |                       
+|   |       ->00.44% (20,480B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |       
+|   ->42.73% (1,974,272B) 0x4007F78: _dl_map_segments (dl-map-segments.h:139)
+|   | ->42.73% (1,974,272B) 0x4007F78: _dl_map_object_from_fd (dl-load.c:1258)
+|   |   ->42.73% (1,974,272B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |     ->42.38% (1,957,888B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |     | ->42.38% (1,957,888B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |     |   ->42.38% (1,957,888B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |     |     ->42.38% (1,957,888B) 0x402241B: dl_main (rtld.c:1965)
+|   |     |       ->42.38% (1,957,888B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |     |         ->42.38% (1,957,888B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |     |           ->42.38% (1,957,888B) 0x402075D: _dl_start (rtld.c:581)
+|   |     |             ->42.38% (1,957,888B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |     |               ->42.38% (1,957,888B) 0x2: ???
+|   |     |                 ->42.38% (1,957,888B) 0x1FFEFFFFFA: ???
+|   |     |                   ->42.38% (1,957,888B) 0x1FFF00000D: ???
+|   |     |                     ->42.38% (1,957,888B) 0x1FFF000012: ???
+|   |     |                       
+|   |     ->00.35% (16,384B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |     
+|   ->02.04% (94,208B) 0x400C36C: _dl_sysdep_read_whole_file (dl-misc.c:49)
+|   | ->02.04% (94,208B) 0x4016C27: _dl_load_cache_lookup (dl-cache.c:411)
+|   |   ->02.04% (94,208B) 0x40097CA: _dl_map_object (dl-load.c:2135)
+|   |     ->02.04% (94,208B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       ->02.04% (94,208B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |         ->02.04% (94,208B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |           ->02.04% (94,208B) 0x402241B: dl_main (rtld.c:1965)
+|   |             ->02.04% (94,208B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |               ->02.04% (94,208B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |                 ->02.04% (94,208B) 0x402075D: _dl_start (rtld.c:581)
+|   |                   ->02.04% (94,208B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |                     ->02.04% (94,208B) 0x2: ???
+|   |                       ->02.04% (94,208B) 0x1FFEFFFFFA: ???
+|   |                         ->02.04% (94,208B) 0x1FFF00000D: ???
+|   |                           ->02.04% (94,208B) 0x1FFF000012: ???
+|   |                             
+|   ->01.15% (53,248B) 0x4008C49: _dl_map_segments (dl-map-segments.h:186)
+|   | ->01.15% (53,248B) 0x4008C49: _dl_map_object_from_fd (dl-load.c:1258)
+|   |   ->01.15% (53,248B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |     ->01.15% (53,248B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       ->01.15% (53,248B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |         ->01.15% (53,248B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |           ->01.15% (53,248B) 0x402241B: dl_main (rtld.c:1965)
+|   |             ->01.15% (53,248B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |               ->01.15% (53,248B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |                 ->01.15% (53,248B) 0x402075D: _dl_start (rtld.c:581)
+|   |                   ->01.15% (53,248B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |                     ->01.15% (53,248B) 0x2: ???
+|   |                       ->01.15% (53,248B) 0x1FFEFFFFFA: ???
+|   |                         ->01.15% (53,248B) 0x1FFF00000D: ???
+|   |                           ->01.15% (53,248B) 0x1FFF000012: ???
+|   |                             
+|   ->00.44% (20,480B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->06.12% (282,624B) 0x0: ???
+| 
+->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 29        154,096        4,616,192        4,616,192             0            0
+ 30        156,625        4,661,248        4,661,248             0            0
+ 31        157,077        8,663,040        8,663,040             0            0
+ 32        157,447       12,664,832       12,664,832             0            0
+ 33        157,779       16,666,624       16,666,624             0            0
+ 34 26,177,129,203       16,666,624       16,666,624             0            0
+100.00% (16,666,624B) (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+->72.03% (12,005,376B) 0x497D5EC: __mmap64 (mmap64.c:58)
+| ->72.03% (12,005,376B) 0x497D5EC: mmap (mmap64.c:46)
+|   ->72.03% (12,005,376B) 0x49029D7: sysmalloc_mmap.isra.0 (malloc.c:2421)
+|     ->72.03% (12,005,376B) 0x490459C: sysmalloc (malloc.c:2576)
+|       ->72.03% (12,005,376B) 0x490459C: _int_malloc (malloc.c:4481)
+|         ->72.03% (12,005,376B) 0x49058F1: malloc (malloc.c:3328)
+|           ->72.03% (12,005,376B) 0x1093A2: reservar_matriz (matmul_secuencial.c:79)
+|             ->24.01% (4,001,792B) 0x1093C1: reservar_matrices (matmul_secuencial.c:88)
+|             | ->24.01% (4,001,792B) 0x10982F: main (matmul_secuencial.c:232)
+|             |   
+|             ->24.01% (4,001,792B) 0x1093D2: reservar_matrices (matmul_secuencial.c:89)
+|             | ->24.01% (4,001,792B) 0x10982F: main (matmul_secuencial.c:232)
+|             |   
+|             ->24.01% (4,001,792B) 0x1093E4: reservar_matrices (matmul_secuencial.c:90)
+|               ->24.01% (4,001,792B) 0x10982F: main (matmul_secuencial.c:232)
+|                 
+->25.46% (4,243,456B) 0x4025D2C: __mmap64 (mmap64.c:58)
+| ->25.46% (4,243,456B) 0x4025D2C: mmap (mmap64.c:46)
+|   ->13.17% (2,195,456B) 0x4007E17: _dl_map_segment (dl-map-segments.h:29)
+|   | ->13.17% (2,195,456B) 0x4007E17: _dl_map_segments (dl-map-segments.h:101)
+|   |   ->13.17% (2,195,456B) 0x4007E17: _dl_map_object_from_fd (dl-load.c:1258)
+|   |     ->13.17% (2,195,456B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |       ->13.05% (2,174,976B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |       | ->13.05% (2,174,976B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |       |   ->13.05% (2,174,976B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |       |     ->13.05% (2,174,976B) 0x402241B: dl_main (rtld.c:1965)
+|   |       |       ->13.05% (2,174,976B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |       |         ->13.05% (2,174,976B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |       |           ->13.05% (2,174,976B) 0x402075D: _dl_start (rtld.c:581)
+|   |       |             ->13.05% (2,174,976B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |       |               ->13.05% (2,174,976B) 0x2: ???
+|   |       |                 ->13.05% (2,174,976B) 0x1FFEFFFFFA: ???
+|   |       |                   ->13.05% (2,174,976B) 0x1FFF00000D: ???
+|   |       |                     ->13.05% (2,174,976B) 0x1FFF000012: ???
+|   |       |                       
+|   |       ->00.12% (20,480B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |       
+|   ->11.85% (1,974,272B) 0x4007F78: _dl_map_segments (dl-map-segments.h:139)
+|   | ->11.85% (1,974,272B) 0x4007F78: _dl_map_object_from_fd (dl-load.c:1258)
+|   |   ->11.85% (1,974,272B) 0x4009528: _dl_map_object (dl-load.c:2268)
+|   |     ->11.75% (1,957,888B) 0x4002A2C: openaux (dl-deps.c:64)
+|   |     | ->11.75% (1,957,888B) 0x400151B: _dl_catch_exception (dl-catch.c:237)
+|   |     |   ->11.75% (1,957,888B) 0x4002E66: _dl_map_object_deps (dl-deps.c:232)
+|   |     |     ->11.75% (1,957,888B) 0x402241B: dl_main (rtld.c:1965)
+|   |     |       ->11.75% (1,957,888B) 0x401EF45: _dl_sysdep_start (dl-sysdep.c:140)
+|   |     |         ->11.75% (1,957,888B) 0x402075D: _dl_start_final (rtld.c:494)
+|   |     |           ->11.75% (1,957,888B) 0x402075D: _dl_start (rtld.c:581)
+|   |     |             ->11.75% (1,957,888B) 0x401F547: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+|   |     |               ->11.75% (1,957,888B) 0x2: ???
+|   |     |                 ->11.75% (1,957,888B) 0x1FFEFFFFFA: ???
+|   |     |                   ->11.75% (1,957,888B) 0x1FFF00000D: ???
+|   |     |                     ->11.75% (1,957,888B) 0x1FFF000012: ???
+|   |     |                       
+|   |     ->00.10% (16,384B) in 1+ places, all below ms_print's threshold (01.00%)
+|   |     
+|   ->00.44% (73,728B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->01.70% (282,624B) 0x0: ???
+| 
+->00.81% (135,168B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 35 26,177,129,203       16,662,528       16,662,528             0            0
+ 36 26,177,129,281       12,660,736       12,660,736             0            0
+ 37 26,177,129,359        8,658,944        8,658,944             0            0

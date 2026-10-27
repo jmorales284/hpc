@@ -1,0 +1,92 @@
+desc: --massif-out-file=perfilado/massif_heap.out
+cmd: perfilado/matmul_g 1000 10
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=167880
+mem_heap_B=4000000
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=167933
+mem_heap_B=8000000
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=167986
+mem_heap_B=12000000
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=26177138842
+mem_heap_B=12004096
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=26177139136
+mem_heap_B=12004096
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=peak
+n2: 12004096 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 12000000 0x1093A2: reservar_matriz (matmul_secuencial.c:79)
+  n1: 4000000 0x1093C1: reservar_matrices (matmul_secuencial.c:88)
+   n0: 4000000 0x10982F: main (matmul_secuencial.c:232)
+  n1: 4000000 0x1093D2: reservar_matrices (matmul_secuencial.c:89)
+   n0: 4000000 0x10982F: main (matmul_secuencial.c:232)
+  n1: 4000000 0x1093E4: reservar_matrices (matmul_secuencial.c:90)
+   n0: 4000000 0x10982F: main (matmul_secuencial.c:232)
+ n0: 4096 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=26177139136
+mem_heap_B=8004096
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=26177139168
+mem_heap_B=4004096
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=26177139200
+mem_heap_B=4096
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=26177142312
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

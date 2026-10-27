@@ -1,0 +1,70 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 88.22     33.93    33.93                             multiplicar_matrices (matmul_secuencial.c:150 @ 1614)
+ 11.60     38.39     4.46                             multiplicar_matrices (matmul_secuencial.c:148 @ 165c)
+  0.08     38.42     0.03                             multiplicar_matrices (matmul_secuencial.c:144 @ 168c)
+  0.05     38.44     0.02                             multiplicar_matrices (matmul_secuencial.c:153 @ 1668)
+  0.03     38.45     0.01                             llenar_matriz (matmul_secuencial.c:131 @ 1580)
+  0.03     38.46     0.01                             llenar_matriz (matmul_secuencial.c:129 @ 15af)
+  0.00     38.46     0.00        3     0.00     0.00  reservar_matriz (matmul_secuencial.c:78 @ 1422)
+  0.00     38.46     0.00        2     0.00     0.00  llenar_matriz (matmul_secuencial.c:126 @ 1552)
+  0.00     38.46     0.00        1     0.00     0.00  inicializar_aleatoriedad (matmul_secuencial.c:117 @ 1530)
+  0.00     38.46     0.00        1     0.00     0.00  liberar_matrices (matmul_secuencial.c:184 @ 1771)
+  0.00     38.46     0.00        1     0.00     0.00  medir_multiplicacion (matmul_secuencial.c:163 @ 16b0)
+  0.00     38.46     0.00        1     0.00     0.00  multiplicar_matrices (matmul_secuencial.c:141 @ 15cb)
+  0.00     38.46     0.00        1     0.00     0.00  obtener_parametros (matmul_secuencial.c:22 @ 12f9)
+  0.00     38.46     0.00        1     0.00     0.00  reservar_matrices (matmul_secuencial.c:87 @ 144d)
+  0.00     38.46     0.00        1     0.00     0.00  validar_parametros (matmul_secuencial.c:40 @ 137e)
+  0.00     38.46     0.00        1     0.00     0.00  validar_rango_multiplicacion (matmul_secuencial.c:61 @ 13d5)
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.03% of 38.46 seconds
+
+index % time    self  children    called     name
+                0.00    0.00       1/3           reservar_matrices (matmul_secuencial.c:88 @ 1466) [80]
+                0.00    0.00       1/3           reservar_matrices (matmul_secuencial.c:89 @ 1477) [81]
+                0.00    0.00       1/3           reservar_matrices (matmul_secuencial.c:90 @ 1489) [82]
+[7]      0.0    0.00    0.00       3         reservar_matriz (matmul_secuencial.c:78 @ 1422) [7]
+-----------------------------------------------
+                0.00    0.00       1/2           main (matmul_secuencial.c:239 @ 191f) [45]
+                0.00    0.00       1/2           main (matmul_secuencial.c:240 @ 1933) [46]
+[8]      0.0    0.00    0.00       2         llenar_matriz (matmul_secuencial.c:126 @ 1552) [8]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:234 @ 1910) [43]
+[9]      0.0    0.00    0.00       1         inicializar_aleatoriedad (matmul_secuencial.c:117 @ 1530) [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:251 @ 1989) [49]
+[10]     0.0    0.00    0.00       1         liberar_matrices (matmul_secuencial.c:184 @ 1771) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:242 @ 1947) [47]
+[11]     0.0    0.00    0.00       1         medir_multiplicacion (matmul_secuencial.c:163 @ 16b0) [11]
+-----------------------------------------------
+                0.00    0.00       1/1           medir_multiplicacion (matmul_secuencial.c:169 @ 16f1) [53]
+[12]     0.0    0.00    0.00       1         multiplicar_matrices (matmul_secuencial.c:141 @ 15cb) [12]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:217 @ 189d) [36]
+[13]     0.0    0.00    0.00       1         obtener_parametros (matmul_secuencial.c:22 @ 12f9) [13]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:232 @ 18fb) [42]
+[14]     0.0    0.00    0.00       1         reservar_matrices (matmul_secuencial.c:87 @ 144d) [14]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:222 @ 18c1) [38]
+[15]     0.0    0.00    0.00       1         validar_parametros (matmul_secuencial.c:40 @ 137e) [15]
+-----------------------------------------------
+                0.00    0.00       1/1           main (matmul_secuencial.c:227 @ 18de) [40]
+[16]     0.0    0.00    0.00       1         validar_rango_multiplicacion (matmul_secuencial.c:61 @ 13d5) [16]
+-----------------------------------------------
+
+Index by function name
+
+   [9] inicializar_aleatoriedad (matmul_secuencial.c:117 @ 1530) [12] multiplicar_matrices (matmul_secuencial.c:141 @ 15cb) [14] reservar_matrices (matmul_secuencial.c:87 @ 144d)
+  [10] liberar_matrices (matmul_secuencial.c:184 @ 1771) [1] multiplicar_matrices (matmul_secuencial.c:150 @ 1614) [7] reservar_matriz (matmul_secuencial.c:78 @ 1422)
+   [8] llenar_matriz (matmul_secuencial.c:126 @ 1552) [2] multiplicar_matrices (matmul_secuencial.c:148 @ 165c) [15] validar_parametros (matmul_secuencial.c:40 @ 137e)
+   [5] llenar_matriz (matmul_secuencial.c:131 @ 1580) [4] multiplicar_matrices (matmul_secuencial.c:153 @ 1668) [16] validar_rango_multiplicacion (matmul_secuencial.c:61 @ 13d5)
+   [6] llenar_matriz (matmul_secuencial.c:129 @ 15af) [3] multiplicar_matrices (matmul_secuencial.c:144 @ 168c)
+  [11] medir_multiplicacion (matmul_secuencial.c:163 @ 16b0) [13] obtener_parametros (matmul_secuencial.c:22 @ 12f9)

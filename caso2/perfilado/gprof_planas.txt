@@ -1,0 +1,72 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 99.95     38.44    38.44        1    38.44    38.44  multiplicar_matrices
+  0.05     38.46     0.02        2     0.01     0.01  llenar_matriz
+  0.00     38.46     0.00        3     0.00     0.00  reservar_matriz
+  0.00     38.46     0.00        1     0.00     0.00  inicializar_aleatoriedad
+  0.00     38.46     0.00        1     0.00     0.00  liberar_matrices
+  0.00     38.46     0.00        1     0.00    38.44  medir_multiplicacion
+  0.00     38.46     0.00        1     0.00     0.00  obtener_parametros
+  0.00     38.46     0.00        1     0.00     0.00  reservar_matrices
+  0.00     38.46     0.00        1     0.00     0.00  validar_parametros
+  0.00     38.46     0.00        1     0.00     0.00  validar_rango_multiplicacion
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.03% of 38.46 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00   38.46                 main [1]
+                0.00   38.44       1/1           medir_multiplicacion [2]
+                0.02    0.00       2/2           llenar_matriz [4]
+                0.00    0.00       1/1           obtener_parametros [8]
+                0.00    0.00       1/1           validar_parametros [10]
+                0.00    0.00       1/1           validar_rango_multiplicacion [11]
+                0.00    0.00       1/1           reservar_matrices [9]
+                0.00    0.00       1/1           inicializar_aleatoriedad [6]
+                0.00    0.00       1/1           liberar_matrices [7]
+-----------------------------------------------
+                0.00   38.44       1/1           main [1]
+[2]     99.9    0.00   38.44       1         medir_multiplicacion [2]
+               38.44    0.00       1/1           multiplicar_matrices [3]
+-----------------------------------------------
+               38.44    0.00       1/1           medir_multiplicacion [2]
+[3]     99.9   38.44    0.00       1         multiplicar_matrices [3]
+-----------------------------------------------
+                0.02    0.00       2/2           main [1]
+[4]      0.1    0.02    0.00       2         llenar_matriz [4]
+-----------------------------------------------
+                0.00    0.00       3/3           reservar_matrices [9]
+[5]      0.0    0.00    0.00       3         reservar_matriz [5]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[6]      0.0    0.00    0.00       1         inicializar_aleatoriedad [6]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[7]      0.0    0.00    0.00       1         liberar_matrices [7]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[8]      0.0    0.00    0.00       1         obtener_parametros [8]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[9]      0.0    0.00    0.00       1         reservar_matrices [9]
+                0.00    0.00       3/3           reservar_matriz [5]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[10]     0.0    0.00    0.00       1         validar_parametros [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[11]     0.0    0.00    0.00       1         validar_rango_multiplicacion [11]
+-----------------------------------------------
+
+Index by function name
+
+   [6] inicializar_aleatoriedad [3] multiplicar_matrices  [10] validar_parametros
+   [7] liberar_matrices        [8] obtener_parametros     [11] validar_rango_multiplicacion
+   [4] llenar_matriz           [9] reservar_matrices
+   [2] medir_multiplicacion    [5] reservar_matriz

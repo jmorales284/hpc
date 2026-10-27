@@ -1,0 +1,13 @@
+tipo,n,workers,tiempo_segundos,repeticion
+secuencial_O2,1000,1,0.727122,1
+secuencial_O2,2000,1,24.254003,1
+secuencial_O2,1000,1,0.820351,2
+secuencial_O2,2000,1,24.292917,2
+secuencial_O2,1000,1,0.838040,3
+secuencial_O2,2000,1,24.983296,3
+openmp_externo,1000,8,0.741912,1
+openmp_externo,2000,8,7.139154,1
+openmp_externo,1000,8,0.695709,2
+openmp_externo,2000,8,7.413666,2
+openmp_externo,1000,8,0.749141,3
+openmp_externo,2000,8,7.924764,3

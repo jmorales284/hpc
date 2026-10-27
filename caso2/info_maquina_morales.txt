@@ -1,0 +1,67 @@
+===== Máquina: morales =====
+Fecha: mar 27 oct 2026 12:39:11 -05
+
+----- Sistema -----
+Linux morales 7.0.0-38-generic #38~24.04.4-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 14 16:37:11 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+
+----- CPU (lscpu) -----
+Arquitectura:                             x86_64
+modo(s) de operación de las CPUs:         32-bit, 64-bit
+Tamaños de las direcciones:               39 bits physical, 48 bits virtual
+Orden de los bytes:                       Little Endian
+CPU(s):                                   8
+Lista de la(s) CPU(s) en línea:           0-7
+ID de fabricante:                         GenuineIntel
+Nombre del modelo:                        Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+Familia de CPU:                           6
+Modelo:                                   165
+Hilo(s) de procesamiento por núcleo:      2
+Núcleo(s) por «socket»:                   4
+«Socket(s)»:                              1
+Revisión:                                 2
+CPU(s) factor de escala MHz:              20%
+CPU MHz máx.:                             4500,0000
+CPU MHz mín.:                             800,0000
+BogoMIPS:                                 4999,90
+Indicadores:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi pku ospke md_clear flush_l1d arch_capabilities
+Virtualización:                           VT-x
+Caché L1d:                                128 KiB (4 instancias)
+Caché L1i:                                128 KiB (4 instancias)
+Caché L2:                                 1 MiB (4 instancias)
+Caché L3:                                 8 MiB (1 instancia)
+Modo(s) NUMA:                             1
+CPU(s) del nodo NUMA 0:                   0-7
+Vulnerabilidad Gather data sampling:      Vulnerable
+Vulnerabilidad Ghostwrite:                Not affected
+Vulnerabilidad Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerabilidad Itlb multihit:             KVM: Mitigation: Split huge pages
+Vulnerabilidad L1tf:                      Not affected
+Vulnerabilidad Mds:                       Not affected
+Vulnerabilidad Meltdown:                  Not affected
+Vulnerabilidad Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerabilidad Old microcode:             Not affected
+Vulnerabilidad Reg file data sampling:    Not affected
+Vulnerabilidad Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerabilidad Spec rstack overflow:      Not affected
+Vulnerabilidad Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerabilidad Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerabilidad Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerabilidad Srbds:                     Mitigation; Microcode
+Vulnerabilidad Tsa:                       Not affected
+Vulnerabilidad Tsx async abort:           Not affected
+Vulnerabilidad Vmscape:                   Mitigation; IBPB before exit to userspace
+
+----- Núcleos disponibles (nproc) -----
+8
+
+----- Memoria (free -h) -----
+               total       usado       libre  compartido   búf/caché  disponible
+Mem:           7,6Gi       3,0Gi       1,4Gi       468Mi       4,0Gi       4,6Gi
+Inter:         4,0Gi          0B       4,0Gi
+
+----- Gobernador de frecuencia -----
+powersave
+
+----- Compilador -----
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
